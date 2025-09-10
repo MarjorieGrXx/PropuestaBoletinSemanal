@@ -209,27 +209,14 @@ body{
 
   /*Contenedores encabezado*/
   #encavezado{ /*Parte superior del menu CAJA MADRE*/
-      width: 100%;
-      height: 200px;
-      display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: #154f91;
   }
-    #iconosRedes{ /*Imagenes de las redes sociales CAJA HIJA*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35%;
-        height: auto;
-    }
-    #logobox{ /*contenedor caja del logo del   encabezado CAJA HIJA*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30%; 
-        height: auto;
-    }
-    #vacio{ /*contenedor CAJA HIJA*/
-      width: 35%;
-    }
   /*****/
 
   /*Contenedores cuerpo*/
@@ -375,14 +362,16 @@ body{
 
 /*****IMAGENES*****/
   #redes{ /*iconos de las redes*/
-      width: 40px;
-      height: 40px;
-      margin: 0px 10px;
-      border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    /* border: solid 1px #ffffff; */
+    box-shadow: 0px 0px /*10px rgba(255, 255, 255, 0.5)*/ 10px rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
   }
 
   #logo14{ /*Logo canal 14 del encabezado*/
-      width: 300px;
+      width: 30px;
   }
 
   .logoBlanco{ /*Logo canal 14 blanco del pie*/
@@ -1295,6 +1284,8 @@ p{
 
   .correo{
     border: none;
+    outline: none;
+    box-shadow: none;
     border-radius: 5px;
     width:70%;
     height: 28px;
