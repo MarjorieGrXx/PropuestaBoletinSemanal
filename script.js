@@ -9,6 +9,8 @@ const equisCerrar = document.getElementById("equisCerrar")
 /* La linea siguiente transforma cada elemento con class "imagenPeq" como un elemento de un arreglo */
 let imagenPeq = [... document.querySelectorAll(".imagenPeq")]
 //los 3 puntos es para q traiga todos los elementos (12) como arreglos individuales
+const toggle = document.getElementById("menu-input");
+const carrucel = document.getElementById("carrucel");
 
 //Definimos variable para almacenar la posición de la imagen a la que le damos click
 let posicion = 0
@@ -60,9 +62,6 @@ flechaIzquierda.addEventListener("click", (e) => {
     title.textContent = imagenPeq[posicion].dataset.name
 })  
 
-const toggle = document.getElementById("menu-input");
-const carrucel = document.getElementById("carrucel");
-
 toggle.addEventListener("change", () => {
   if (toggle.checked) {
     carrucel.style.display = "none";
@@ -71,3 +70,12 @@ toggle.addEventListener("change", () => {
   }
 });
 
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
+    carrucel.style.display = "none";
+    document.body.classList.add("no-scroll"); // BLOQUEA SCROLL
+  } else {
+    carrucel.style.display = "flex";
+    document.body.classList.remove("no-scroll"); // DESBLOQUEA SCROLL
+  }
+});

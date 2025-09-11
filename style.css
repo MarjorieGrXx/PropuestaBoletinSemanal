@@ -133,6 +133,12 @@ body{
   margin: 0 20px;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
   /*****CONTENEDORES*********/
 
   /*Contenedores encabezado*/
@@ -499,6 +505,12 @@ p{
   width: 80px;
   height: 80px;
   margin: 0px 20px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
   /*****CONTENEDORES*********/
