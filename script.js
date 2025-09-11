@@ -6,7 +6,6 @@ const imagen = document.getElementById ("imagen")
 const flechaIzquierda = document.getElementById("flechaIzquierda")
 const flechaDerecha = document.getElementById("flechaDerecha")
 const equisCerrar = document.getElementById("equisCerrar")
-
 /* La linea siguiente transforma cada elemento con class "imagenPeq" como un elemento de un arreglo */
 let imagenPeq = [... document.querySelectorAll(".imagenPeq")]
 //los 3 puntos es para q traiga todos los elementos (12) como arreglos individuales
@@ -41,12 +40,6 @@ equisCerrar.addEventListener("click", (e) => {
     imagenGrande.style.display = "none"
 })
 
-//Se oculta la imagen grande al dar click alrededor de ella
-/*imagenGrande.addEventListener("click", (e) => {
-if(e.target.classList.contains("imagenGrande"))
-    imagenGrande.style.display = "none"
-})*/
-
 flechaDerecha.addEventListener("click", (e) => 
 {
     /*Esta preguntando si esta en la posicion 11, puede cambiar el imagenPeq.length por el 11
@@ -66,3 +59,15 @@ flechaIzquierda.addEventListener("click", (e) => {
     imagen.src = imagenPeq[posicion].src
     title.textContent = imagenPeq[posicion].dataset.name
 })  
+
+const toggle = document.getElementById("menu-input");
+const carrucel = document.getElementById("carrucel");
+
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
+    carrucel.style.display = "none";
+  } else {
+    carrucel.style.display = "flex";
+  }
+});
+
