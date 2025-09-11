@@ -31,7 +31,7 @@ body{
   bottom: 60px;      /* Distancia desde abajo, ajusta a tu gusto */
   padding: 5px 5px;
   border-radius: 15px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .imagenGrande img
@@ -146,6 +146,13 @@ body{
     background-color: #154f91;
   }
   /*****/
+    .titulo{
+    font-size: 10px;
+    margin: 30px 10px 10px 10px;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 10px;
+  }
 
   /*Contenedores cuerpo*/
   #contenedor{ /*Contenedor del cuerpo (todas las cajitas) CAJA MADRE*/
@@ -227,13 +234,18 @@ body{
   /****/
 
   /*Contenedores del pie de página*/
-
-  #pie{ /*Contenedor grande CAJA MADRE*/
+   #Piesote{
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #154f91;
     width: auto;
-    padding: 25px 25px 0px;
   }
+    .canal14{
+      padding: 40px 30px 0 30px;
+    }
     .otros{ /*Contenedores de la derecha (son 3) CAJA HIJA*/
-      padding: 40px 0px 0px 0px;
+      padding: 15px 30px;
     }
 
   #pie2{
@@ -298,9 +310,8 @@ body{
 
 
 /******TIPOGRAFIA******/
-h1{
-    font-size: 30px;
-    margin: 30px 0px 10px 15px; 
+h2{
+  font-size: 20px;
 }
 
 h3{
@@ -309,7 +320,7 @@ h3{
 }
 
 ol{
-  font-size: 16px;
+  font-size: 14px;
   margin: 30px 0px;
 }
 
@@ -318,7 +329,7 @@ ol{
 }
 
 .dia{
-  font-size: 9px;
+  font-size: 10px;
   margin: 6px 0px;
 }
 
@@ -326,6 +337,9 @@ ol{
   width: 100%;
 }
 
+p{
+  font-size: 14px;
+}
 .copyright{
   text-align: center;
   font-size: 17px;
@@ -585,19 +599,23 @@ ol{
   
 /*****************************/
   /*Contenedores del pie de página*/
+  #Piesote{
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #154f91;
+    padding-top: 40px;
+  }
 
   #pie{ /*Contenedor grande CAJA MADRE*/
+    display: flex;
     width: auto;
-    height: auto;
-    margin-top: 45px;
-    padding: 10px 25px 0; 
+    padding: 10px 25px;;
   }
     .canal14{ /*Contenedor de la izquierda CAJA HIJA*/
       font-size: 18px;
-      width: 100%;
       height: 80%;
-      margin: 20px 0px;
-      padding: 0 10px 0 0;
+      margin: 0 30px;
     }
     .otros{ /*Contenedores de la derecha (son 3) CAJA HIJA*/
       width: 35%;
@@ -1094,6 +1112,12 @@ ol{
     /****/
 
   /*Contenedores del pie de página*/
+   #Piesote{
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #154f91;
+  }
   #pie{ /*Contenedor grande CAJA MADRE*/
     display: flex;
     width: auto;
@@ -1102,7 +1126,7 @@ ol{
     padding: 30px 50px;
   }
     .canal14{ /*Contenedor de la izquierda CAJA HIJA*/
-      font-size: 18px;
+      font-size: 15px;
       justify-content: left;
       width: 30%;
       height: 80%;
@@ -1218,12 +1242,12 @@ ol{
   }
 
   h3{
-    font-size: 30px;
+    font-size: 18px;
     margin: 10px 0px;
   }
 
   ol{
-    font-size: 16px;
+    font-size: 15px;
     margin: 30px 0px;
   }
 
@@ -1232,7 +1256,7 @@ ol{
   }
 
   .dia{
-    font-size: 15px;
+    font-size: 17px;
     margin: px 0px;
   }
 
@@ -1336,12 +1360,7 @@ ol{
   /****/
 
   /*Contenedores del pie de página*/
-   #Piesote{
-    color: white;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    background-color: #154f91;
-  }
+
   #pie4{ 
     background-color: #154f91;
     color: white;
@@ -1396,6 +1415,7 @@ ol{
 }
 
 p{
+  font-family: Monserrat-light;
   line-height: 2;
 }
 
