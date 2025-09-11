@@ -522,36 +522,98 @@ ol{
   .phone{
     display: none;
   }
+
+  /*Estilos imagen grande*/
+.imagenGrande
+{
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(255, 255, 255, 0.555); */
+    /* background: linear-gradient(to right, #99cd32d8, #154f91ce); */
+    background: radial-gradient(circle, rgba(21, 79, 145, 0.91) 25%, rgba(153, 205, 50, 0.91) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+#title{
+  display: block;
+  position: absolute;
+  bottom: 30px;      /* Distancia desde abajo, ajusta a tu gusto */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgb(21, 79, 145);
+  margin: 20px 0 0 0;
+  padding: 10px 10px;
+  border-radius: 15px;
+  font-size: 30px;
+  font-family: Monserrat;
+  text-shadow: 0px 0px 8px #000000b6;
+  text-align: center;
+  z-index: 100;
+}
+
+.imagenGrande img
+{
+    width: 50%;
+    max-height: 500px;
+    height: 50%;
+    border-radius: 25px;
+    margin: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.616); 
+}
+
+.imagenGrande i
+{
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  /* Trancisión 2 fallida*/
+  overflow: hidden;
+}
+
+
+#equisCerrar
+{
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 35px;
+    cursor: pointer;   
+    font-family: Monserrat;
+}
+
+
   /*****CONTENEDORES*********/
 
   /*Contenedores encabezado*/
   #encavezado{ /*Parte superior del menu CAJA MADRE*/
-      width: 100%;
-      height: 200px;
-      display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: #154f91;
   }
-    #iconosRedes{ /*Imagenes de las redes sociales CAJA HIJA*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35%;
-        height: auto;
-    }
-    #logobox{ /*contenedor caja del logo del encabezado CAJA HIJA*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30%; 
-        height: auto;
-    }
-    #vacio{ /*contenedor CAJA HIJA*/
-      width: 35%;
-    }
   /*****/
 
   /*Contenedores cuerpo*/
+  .titulo{
+    font-size: 15px;
+    margin: 50px 50px 0px 50px;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 10px;
+  }
   #contenedor{ /*Contenedor del cuerpo CAJA MADRE*/
-      padding: 20px 50px 0px 50px; /*arriba derecha abajo izquierda*/
+      padding: 20px 20px 0px 20px; /*arriba derecha abajo izquierda*/
   }
 
     #contenedorBanner{ /*Cajas dobles (2 x fila) CAJA HIJA*/
@@ -568,82 +630,152 @@ ol{
         border: 1px solid #0000008e;
     }
 
-    #cajita{ /*Contenedor de anuncios pequeña CAJA HIJA*/
+    #cajita{ /*Contenedor de anuncios  CAJA HIJA*/
       display: flex;
       justify-content: space-between;
       width: 95%;
-      height: 200px;
+      height: 150px;
       margin: 30px 0px;
-      padding: 30px;
+      padding: 20px;
       border-radius: 15px;
       /*border: 1px solid #0000008e;*/
-      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.562);
+      box-shadow: 0px 0px 8px rgba(21, 79, 145, 0.623);
       /*Primer valor es desplazamiento horizontal.
       El segundo es desplazamiento vertical.
       El tercero es difuminado.
       El cuarto es opacidad.*/ 
       /*margin: 0px 0px 20px 0px;*/
     }
-      #contenido{
-        width: auto;
-        height: auto;
-        margin: 10px 0px;
-      }
-      #pieDeCaja{
-        width: auto;
-        height: 250px;
-      }
-  /****/
 
+      #contenido{
+        width: 500px;
+        height: auto;
+      }
+
+      #carrucel{
+        box-sizing: border-box;
+        width: 55%;
+        height: auto;
+        /* margin: 10px 0px; */
+        display: flex;
+        justify-content: center;                    
+        align-items: center;
+        /* min-height: 100vh; */
+        /* background-color: blue; */
+        /* background-size: cover; */
+      }
+
+      .box{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        transform-style: preserve-3d;
+        animation: animate 20s linear infinite;
+      }
+
+      @keyframes animate{
+          0%{
+              transform: perspective(1000px) rotateY(0deg);
+          }
+          100%{
+              transform: perspective(1000px) rotateY(360deg);
+          }
+      }
+      .box span{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform-origin: center;
+          transform-style: preserve-3d;
+          transform: rotateY(calc(var(--i)*45deg)) translateZ(100px); /*Este tarslate es para el espacio entre imagenes*/
+          /* -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);  */
+      }
+      
+      .box span img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+          background-color: #ffffff;
+      }
+    /****/
+  
+/*****************************/
   /*Contenedores del pie de página*/
-  #pie{ /*Contenedor grande CAJA MADRE*/
-    color: white;
-    display: flex;
-    width: 92%;
-    height: auto;
-    margin-top: 80px;
-    background-color: #154f91;
-    padding: 10px 50px;
-    padding: 20px 50px 0px 50px;
+  #Piesote{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    background-color: #154f91;
+    color: white;
+  }
+
+  #pie{ /*Contenedor grande CAJA MADRE*/
+    width: auto;
+    height: auto;
+    margin-top: 45px;
+    padding: 10px 25px 0; 
     /*text-align: center;
     padding: 20px;
     border-top: 2px solid #491e0a;*/
   }
     .canal14{ /*Contenedor de la izquierda CAJA HIJA*/
-      justify-content: left;
-      width: 35%;
+      font-size: 18px;
+      width: 100%;
       height: 80%;
-      margin: 20px 10px;
+      margin: 20px 0px;
+      padding: 0 10px 0 0;
     }
     .otros{ /*Contenedores de la derecha (son 3) CAJA HIJA*/
-      width: 20%;
+      width: 35%;
       height: 50%;
-      margin: 20px 10px;
+      padding: 0px 20px;
     }
-  #pie2{
+
+      .cj{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin: 10px 0px;
+      }
+
+  #pie1{
     display: flex;
     width: 100%;
-    padding: 30px 0px;
-    background-color: #154f91;
+    height: auto;
   }
-    #pie2caja1{
-      padding: 0px 50px;
-      width: 50%;
+
+  #pie2{
+    display: flex;
+    background-color: #154f91;
+    width: 100%;
+    height: 170px;
+  }
+    #pie2caja{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     #pie2caja2{
-      text-align: right;
-      width: 50%;
+      width: 100%;
+      height: 100px;
+    }
+
+    #pie2caja2 h2{
+      margin: 20px 0;
     }
   #pie3{
     display: flex;
-    margin: 0px;
-    background-color: #154f91;
   }
   #pie4{
+    width: auto;
     display: flex;
     justify-content: space-between;
+    padding: 15px 0;
     height: 100px;
     margin: 0px;
     background-color: #154f91;
@@ -651,36 +783,51 @@ ol{
   }
     #pie4caja{
       width: auto;
-      margin-right: 90px;
+      margin-right: 80px;
     }
   #pie5{
     background-color: yellowgreen;
-    width: 99%;
-    padding: 0px 5px;
-    height: 10px;
+    width: 100%;
+    height: 40px;
   }
 /*****************************/
 
 
 /*****IMAGENES*****/
   #redes{ /*iconos de las redes*/
-      width: 40px;
-      height: 40px;
-      margin: 0px 10px;
-      border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    /* border: solid 1px #ffffff; */
+    box-shadow: 0px 0px /*10px rgba(255, 255, 255, 0.5)*/ 10px rgba(0, 0, 0, 0.5);
+    margin: 0 15px;
   }
 
-  #logo14{ /*Logo canal 14 del encabezado*/
-      width: 300px;
+  .redesSociales{
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+    border-radius: 6px;
+    background-color: #9acd32;
+    padding: 5px;
+  }
+  .contacto{
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+    border-radius: 6px;
+    padding: 5px;
   }
 
   .logoBlanco{ /*Logo canal 14 blanco del pie*/
-      width: 200px;
+      width: 150px;
+      margin: 0 41%;
   }
 
   .regiones{ /*imagen regiones 14.2 del pie*/
-    width: 120px;
-    margin: 0px 80px;
+    width: 160px;
+    height: 160px;
+    margin: 0px 65px 0 100px;
   }
 
   .coopelesca{
@@ -688,8 +835,8 @@ ol{
   }
 
   .imagen{
-    height: 150px;
-    margin-top: 20px;
+    height: 100px;
+    margin-top: 25px;
     border-radius: 30px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.377); 
     /*Primer valor es desplazamiento horizontal.
@@ -700,48 +847,109 @@ ol{
 /***********************/
 
 
-/******TIPOGRAFIA******/
-h1{
+  /******TIPOGRAFIA******/
+
+  h2{
+      font-family: Monserrat-Bold;
+      margin: 10px 0px;
+      color: #9acd32;
+  }
+
+  h3{
+    font-size: 22px;
+    margin: 5px 0px;
+    /* color: #154f91; */
+  }
+
+  ol{
+    font-size: 16px;
     font-family: Monserrat;
-    font-size: 40px;
-    margin: 20px 50px;
-}
+    margin: 30px 0px;
+  }
 
-h2{
+  .texto{
+    width: 70%;
+  }
+
+  .dia{
+    display: flex;
+    font-size: 15px;
+    margin: px 0px;
+  }
+
+  .verde {
+    width: 100%;
+  }
+
+  .copyright{
+    color: white;
+    font-size: 20px;
+    margin: 20px 50px 0 50px;
+  }
+
+  #flechBlanca {
+    width: auto;
+    height: auto;
+    color: white;
+    margin: 0 5px;
+    font-size: 25px;
     font-family: Monserrat-Bold;
-    margin: 10px 0px;
-    color: yellowgreen;
-}
+  }
 
-h3{
-  font-family: Monserrat-light;
-  font-size: 30px;
-  margin: 10px 0px;
-}
+  #flechBlue{
+    color: #154f91;
+    font-size: 20px;
+  }
 
-ol{
-  font-size: 16px;
-  font-family: Monserrat;
-  margin: 30px 0px;
-}
+  .correo{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    width:70%;
+    height: 28px;
+    font-family: Monserrat;
+    font-size: 15px;
+    padding: 5px 10px;
+  }
 
-p{
-  line-height: 2;
-}
+  .enviarBoton{
+    border: none;
+    height: 39px;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px ;
+    color: white;
+    background-color: #a2d45e;
+    font-family: Monserrat-Bold;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.557);
+  }
 
-.texto{
-  width: 70%;
-}
+  .buscador{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #154f91;
+    height: 40px;
+    width: 60%;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #d3e9ff;
+    padding: 5px 10px;
+  }
 
-.verde {
-  margin: 0px auto 20px auto; /*arriba derecha abajo izquierda*/
-  width: 90%;
-}
-
-.copyright{
-  /* color: white; */
-  margin: 10px 80px;
-}
+  #lupa{
+    background-color: #d3e9ff;
+    color: #154f91;
+    font-size: 25px;
+    font-family: Monserrat-Bold;
+    height: 24px;
+    width: 25px;
+    padding: 8px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+  }
 
 }
 
