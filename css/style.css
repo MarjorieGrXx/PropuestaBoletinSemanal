@@ -1,11 +1,11 @@
 @font-face {
   font-family: Monserrat-Bold;
-  src: url("../res/Montserrat-SemiBold.otf");
+  src: url("res/Montserrat-SemiBold.otf") format('opentype'); 
 }
 
 @font-face {
   font-family: Monserrat-light;
-  src: url("res/Monserrat-ExtraLight.otf");
+  src: url("res/Montserrat-ExtraLight.otf");
 }
 
 @font-face {
