@@ -1,16 +1,16 @@
 @font-face {
   font-family: Monserrat-Bold;
-  src: url("res/Montserrat-SemiBold.otf") format('opentype'); 
+  src: url("/res/Montserrat-SemiBold.otf") format('opentype'); 
 }
 
 @font-face {
   font-family: Monserrat-light;
-  src: url("res/Montserrat-ExtraLight.otf") format('opentype');
+  src: url("/res/Montserrat-ExtraLight.otf") format('opentype');
 }
 
 @font-face {
   font-family: Monserrat;
-  src: url("res/montserrat.regular.ttf") format('opentype');
+  src: url("/res/montserrat.regular.ttf") format('opentype');
 }
 
 @media (max-width: 767px) { /*telefono*/
