@@ -65,14 +65,14 @@ body{
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    --icon-toggle-menu: url("/res/hamburguer.svg");
+    --icon-toggle-menu: url("res/hamburguer.svg");
     --transform-menu-show:translate(-100%);
     box-shadow: 0 0 10px rgba(21, 75, 141, 0.5);
 }
 
 
 .nav_container:has(.nav_input:checked){
-    --icon-toggle-menu: url("/res/close.svg");
+    --icon-toggle-menu: url("res/close.svg");
       --transform-menu-show:translate(0%);
 }
 
