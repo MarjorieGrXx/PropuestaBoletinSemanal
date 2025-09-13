@@ -1,19 +1,19 @@
 @font-face {
   font-family: Monserrat-Bold;
-  src: url("res/Montserrat-SemiBold.otf") format('opentype'); 
+  src: url("/res/Montserrat-SemiBold.otf")format('opentype'); 
 }
 
 @font-face {
   font-family: Monserrat-light;
-  src: url("res/Montserrat-ExtraLight.otf") format('opentype');
+  src: url("/res/Montserrat-ExtraLight.otf")format('opentype');
 }
 
 @font-face {
   font-family: Monserrat;
-  src: url("res/montserrat.regular.ttf") format('opentype');
+  src: url("/res/montserrat.regular.ttf")format('opentype');
 }
 
-@media (max-width: 767px) { /*telefono*/
+@media (max-width: 767px) { /*Css exclusivo del movil*/
   .escritorio{
     display: none;
   }
@@ -23,12 +23,12 @@ body{
     font-family: Monserrat-light;
 }
 
-  /*Estilos imagen grande*/
+  /*Estilos que se muestran al hacer click en una imagen del carrucel*/
 
 #title{
   width: 80%;
   max-width: 300px;
-  bottom: 60px;      /* Distancia desde abajo, ajusta a tu gusto */
+  bottom: 60px; 
   padding: 5px 5px;
   border-radius: 15px;
   font-size: 30px;
@@ -60,19 +60,19 @@ body{
 }
 
 .nav_container{ 
-    width: min(90%,1200); /*Lo mismo q las otras 2 lineas*/
+    width: min(90%,1200);
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    --icon-toggle-menu: url("res/hamburguer.svg");
+    --icon-toggle-menu: url("/res/hamburguer.svg");
     --transform-menu-show:translate(-100%);
     box-shadow: 0 0 10px rgba(21, 75, 141, 0.5);
 }
 
 
 .nav_container:has(.nav_input:checked){
-    --icon-toggle-menu: url("res/close.svg");
+    --icon-toggle-menu: url("/res/close.svg");
       --transform-menu-show:translate(0%);
 }
 
@@ -95,21 +95,16 @@ body{
     display: none;
 }
 
-.nav_list{ /*despliegue del menu*/ /*---ASI SE VE EL MENU DESPLEGADO---*/
+.nav_list{ /*---CSS DEL MENU DESPLEGADO---*/
   font-family: Monserrat-Bold;
   transform: var(--transform-menu-show);
-  position: fixed; /*pa que no se mueva de donde esta*/
-  inset: 0;/*esto hace que el menu ocupe todo el espacio*/
+  position: fixed;
+  inset: 0;
   margin-top: 140px;
   width: 100%;
   height: 380px;
-  display: grid; /*para q ocupen todo el espacio hacia abajo como space btween*/
-  align-content: center; /*para q se centren en el eje y esten juntitos*/
-  /*justify-content: center; /*Para q se centre en el eje x (horizontal)*/
-  /*align content y justify content se pueden juntar con un place-content*/
-  /*gap: 1rem; /*para q donde estan todos en el centro, mantengan un poco de espacio como con margin*/
-  /*text-align: center; /*para q se centren horizontalmente*/
-  /* padding: 1.5rem 5%; */
+  display: grid; 
+  align-content: center;
   background-color: #154b8d;
   list-style: none;
   transition: .5s transform;
@@ -151,7 +146,6 @@ body.no-scroll {
     display: flex;
     background-color: #154f91;
   }
-  /*****/
     .titulo{
     font-size: 10px;
     margin: 30px 10px 10px 10px;
@@ -162,7 +156,7 @@ body.no-scroll {
 
   /*Contenedores cuerpo*/
   #contenedor{ /*Contenedor del cuerpo (todas las cajitas) CAJA MADRE*/
-      padding: 20px 3px 0px 10px; /*arriba derecha abajo izquierda*/
+      padding: 20px 3px 0px 10px;
   }
 
     #caja{ /*contenedor de el banner CAJA HIJA*/
@@ -186,17 +180,12 @@ body.no-scroll {
         box-sizing: border-box;
         width: 90%;
         height: auto;
-        /* margin: 10px 0px; */
         display: flex;
         justify-content: center;                    
         align-items: center;
-        /* min-height: 100vh; */
-        /* background-color: blue; */
-        /* background-size: cover; */
       }
 
       .box{
-        /* position: relative; */
         width: 45px;
         height: 45px;
         transform-style: preserve-3d;
@@ -219,10 +208,9 @@ body.no-scroll {
           height: 100%;
           transform-origin: center;
           transform-style: preserve-3d;
-          transform: rotateY(calc(var(--i)*45deg)) translateZ(56px); /*Este tarslate es para el espacio entre imagenes*/
+          transform: rotateY(calc(var(--i)*45deg)) translateZ(56px);
           /* -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);  */
       }
-      
       .box span img{
           position: absolute;
           top: 0;
@@ -233,13 +221,12 @@ body.no-scroll {
           object-fit: cover;
           background-color: #ffffff;
       }
-
       #pieDeCaja{
         height: 250px;
       }
   /****/
 
-  /*Contenedores del pie de página*/
+  /*Contenedores del footer de página*/
    #Piesote{
     color: white;
     border-top-left-radius: 40px;
@@ -250,7 +237,7 @@ body.no-scroll {
     .canal14{
       padding: 40px 30px 0 30px;
     }
-    .otros{ /*Contenedores de la derecha (son 3) CAJA HIJA*/
+    .otros{
       padding: 15px 30px;
     }
 
@@ -280,7 +267,7 @@ body.no-scroll {
     width: 30px;
     height: 30px;
     padding: 5px;
-    box-shadow: 0px 0px /*10px rgba(255, 255, 255, 0.5)*/ 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     margin: 0 5px;
   }
 
@@ -359,7 +346,6 @@ p{
     margin: 10px 0;
     font-size: 15px;
     padding: 5px 10px;
-    /*box-sizing: border-box; /* asegura que padding no rompa el ancho */
   }
 
   .enviarBoton{
@@ -375,7 +361,7 @@ p{
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.557);
   }
 
-  #flechBlanca{
+  .flechBlanca{
     color: #ffffff;
     font-size: 20px;
   }
@@ -387,12 +373,10 @@ p{
   }
 }
 
-@media (min-width: 768px) and (max-width: 990px) {/*tablet*/
+@media (min-width: 768px) and (max-width: 990px) {/*CSS disponible unicamente en tablet*/
   .escritorio{
     display: none;
   }
-
-  /*Estilos imagen grande*/
 
 #title{
   width: 80%;
@@ -468,22 +452,17 @@ p{
     display: none;
 }
 
-.nav_list{ /*despliegue del menu*/ /*---ASI SE VE EL MENU DESPLEGADO---*/
+.nav_list{ /*---CSS DEL MENU DESPLEGADO---*/
   font-family: Monserrat-Bold;
   font-size: 25px;
   transform: var(--transform-menu-show);
-  position: fixed; /*pa que no se mueva de donde esta*/
-  inset: 0;/*esto hace que el menu ocupe todo el espacio*/
+  position: fixed;
+  inset: 0;
   margin-top: 210px;
   width: 100%;
   height: 550px;
-  display: grid; /*para q ocupen todo el espacio hacia abajo como space btween*/
-  align-content: center; /*para q se centren en el eje y esten juntitos*/
-  /*justify-content: center; /*Para q se centre en el eje x (horizontal)*/
-  /*align content y justify content se pueden juntar con un place-content*/
-  /*gap: 1rem; /*para q donde estan todos en el centro, mantengan un poco de espacio como con margin*/
-  /*text-align: center; /*para q se centren horizontalmente*/
-  /* padding: 1.5rem 5%; */
+  display: grid;
+  align-content: center; 
   background-color: #154b8d;
   list-style: none;
   transition: .5s transform;
@@ -536,7 +515,7 @@ body.no-scroll {
     padding: 10px;
   }
   #contenedor{ /*Contenedor del cuerpo CAJA MADRE*/
-      padding: 20px 20px 0px 20px; /*arriba derecha abajo izquierda*/
+      padding: 20px 20px 0px 20px;
   }
 
     #caja{ /*contenedor de el banner CAJA HIJA*/
@@ -560,13 +539,9 @@ body.no-scroll {
         box-sizing: border-box;
         width: 55%;
         height: auto;
-        /* margin: 10px 0px; */
         display: flex;
         justify-content: center;                    
         align-items: center;
-        /* min-height: 100vh; */
-        /* background-color: blue; */
-        /* background-size: cover; */
       }
 
       .box{
@@ -593,7 +568,7 @@ body.no-scroll {
           height: 100%;
           transform-origin: center;
           transform-style: preserve-3d;
-          transform: rotateY(calc(var(--i)*45deg)) translateZ(100px); /*Este tarslate es para el espacio entre imagenes*/
+          transform: rotateY(calc(var(--i)*45deg)) translateZ(100px); 
           /* -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);  */
       }
       
@@ -610,7 +585,7 @@ body.no-scroll {
     /****/
   
 /*****************************/
-  /*Contenedores del pie de página*/
+  /*Contenedores del footer de página*/
   #Piesote{
     color: white;
     border-top-left-radius: 40px;
@@ -694,15 +669,6 @@ body.no-scroll {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     margin: 0 15px;
   }
-
-  /*.redesSociales{
-    width: 20px;
-    height: 20px;
-    margin: 0px 10px;
-    border-radius: 6px;
-    background-color: #9acd32;
-    padding: 5px;
-  }*/
   .contacto{
     width: 30px;
     height: 30px;
@@ -725,7 +691,6 @@ body.no-scroll {
   .coopelesca{
     width: 200px;
   }
-
   .imagen{
     height: 100px;
     margin-top: 25px;
@@ -765,7 +730,7 @@ body.no-scroll {
     margin: 20px 50px 0 50px;
   }
 
-  #flechBlanca{
+  .flechBlanca{
     color: #ffffff;
     font-size: 20px;
   }
@@ -818,7 +783,7 @@ body.no-scroll {
 
 }
 
-@media (min-width: 991px) {/*compu*/
+@media (min-width: 991px) {/*CSS disponible solo en escritorio*/
   .tablet{
     display: none;
   }
@@ -846,7 +811,6 @@ body.no-scroll {
 
   #menu > ul > li {
     float: left;
-    /* margin-left: 25px; */
     position: relative;
   }
   #menu > ul > li > a {
@@ -874,7 +838,7 @@ body.no-scroll {
     top: 25px;
     left: 50%;
     margin-left: -90px;
-    width: 270px; /******/
+    width: 270px;
     -webkit-transition: all .3s .1s;
     -moz-transition: all .3s .1s;
     -o-transition: all .3s .1s;
@@ -894,12 +858,12 @@ body.no-scroll {
     color: #154f91;
   }
 
-  #menu > ul > li:hover > ul { /*flecha arriba*/
+  #menu > ul > li:hover > ul {
     opacity: 1;
     top: 42px;
     visibility: visible;
   }
-  #menu > ul > li > ul:before { /*esto es de la flecha de arriba, solo la flecha*/
+  #menu > ul > li > ul:before {
     content: '';
     display: block;
     border-color: transparent transparent #f3f9ff transparent;
@@ -924,17 +888,17 @@ body.no-scroll {
     -o-transition: background-color 0.1s;
     transition: background-color 0.1s;
   }
-  #menu > ul > li > ul > li > ul:before { /*flecha al lado*/
+  #menu > ul > li > ul > li > ul:before {
     content: '';
     display: block;
-    border-color: transparent #154f91/*#f3f9ff*/ transparent transparent;
+    border-color: transparent #154f91 transparent transparent;
     border-style: solid;
     border-width: 10px;
     position: absolute;
     top: 11%;
     left: -20px;
   }
-  #menu ul ul ul {  /*ESTE no ES*/
+  #menu ul ul ul { 
     visibility: hidden;
     opacity: 0;
     position: absolute;
@@ -955,7 +919,7 @@ body.no-scroll {
   }
   #menu ul ul > li:hover > ul {
     opacity: 1;
-    left: 285px; /*****/
+    left: 285px;
     visibility: visible;
   }
   #menu ul ul a:hover {
@@ -963,10 +927,8 @@ body.no-scroll {
     color: #154f91;
   }
 
-  /*Estilos imagen grande*/
-
 #title{
-  bottom: 30px;      /* Distancia desde abajo, ajusta a tu gusto */
+  bottom: 30px;      
   margin: 20px 0 0 0;
   padding: 10px 10px;
   border-radius: 15px;
@@ -1038,12 +1000,6 @@ body.no-scroll {
       padding: 20px 50px 0px 50px; /*arriba derecha abajo izquierda*/
   }
 
-    #contenedorBanner{ /*Cajas dobles (2 x fila) CAJA HIJA*/
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 50px 0px 50px; /*arriba derecha abajo izquierda*/
-    }
-
     #caja{ /*contenedor de el banner CAJA HIJA*/
         border-radius: 15px;
         width: 100%;
@@ -1069,13 +1025,9 @@ body.no-scroll {
         box-sizing: border-box;
         width: 50%;
         height: auto;
-        /* margin: 10px 0px; */
         display: flex;
         justify-content: center;                    
         align-items: center;
-        /* min-height: 100vh; */
-        /* background-color: blue; */
-        /* background-size: cover; */
       }
 
       .box{
@@ -1102,7 +1054,7 @@ body.no-scroll {
           height: 100%;
           transform-origin: center;
           transform-style: preserve-3d;
-          transform: rotateY(calc(var(--i)*45deg)) translateZ(153px); /*Este tarslate es para el espacio entre imagenes*/
+          transform: rotateY(calc(var(--i)*45deg)) translateZ(153px); 
           /* -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);  */
       }
       
@@ -1205,15 +1157,6 @@ body.no-scroll {
     background-color: #154f91;
     padding: 5px;
   }
-
-  /*.redesSociales{
-    width: 20px;
-    height: 20px;
-    margin: 0px 10px;
-    border-radius: 6px;
-    background-color: #9acd32;
-    padding: 5px;
-  }*/
   .contacto{
     width: 30px;
     height: 30px;
@@ -1226,11 +1169,11 @@ body.no-scroll {
       width: 300px;
   }
 
-  .logoBlanco{ /*Logo canal 14 blanco del pie*/
+  .logoBlanco{ /*Logo canal 14 blanco del footer*/
       width: 200px;
   }
 
-  .regiones{ /*imagen regiones 14.2 del pie*/
+  .regiones{ /*imagen regiones 14.2 del footer*/
     width: 120px;
     margin: 0px 80px;
   }
@@ -1273,7 +1216,7 @@ body.no-scroll {
   }
 
   .verde {
-    margin: 0px auto 20px auto; /*arriba derecha abajo izquierda*/
+    margin: 0px auto 20px auto;
     width: 90%;
   }
 
@@ -1281,7 +1224,7 @@ body.no-scroll {
     margin: 10px 80px;
   }
 
-  #flechBlanca {
+  .flechBlanca {
     width: auto;
     height: auto;
     color: white;
@@ -1290,7 +1233,7 @@ body.no-scroll {
     font-family: Monserrat-Bold;
   }
 
-  #flechBlue{
+  .flechBlue{
     color: #154f91;
     font-size: 20px;
   }
@@ -1339,6 +1282,10 @@ body.no-scroll {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
   }
+
+  .texto{
+    font-size: 30px;
+  }
 }
 
 * {
@@ -1371,7 +1318,7 @@ body.no-scroll {
       }
   /****/
 
-  /*Contenedores del pie de página*/
+  /*Contenedores del footer de página*/
 
   #pie4{ 
     background-color: #154f91;
@@ -1443,8 +1390,6 @@ p{
 .copyright{
   color: white;
 }
-
-/*Estilos imagen grande*/
 .imagenGrande
 {
     width: 100%;
